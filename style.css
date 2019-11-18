@@ -1,94 +1,94 @@
-html {
-    min-height: 100vh;
+*{
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
+html {
+    height: 100%;
 }
 
 body {
     margin:0;
     padding: 0;
-    background-color: #d2d2d2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.site {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  
-  .site-content {
-    flex: 1;
-  }
-
-.container {
-    width: 1024px;
+.width-container {
+    width: 65%;
     margin: 0 auto;
 }
 
 header {
-    background-color: lightblue;
+    background-color: #f3f3f3;
 }
-
 
 .nav-container {
     display: flex;
-    padding: 20px 0;
-    box-sizing: border-box;
-    
-}
-
-#logo {
-    flex: 1;
-    background-color: white;
-    padding-left: 20px;
-    box-sizing: border-box;
-}
-
-nav {
-    flex: 4;
-    background-color: blue;
-    text-align: right;
-}
-
-nav ul {
-    margin:0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-}
-
-.article-content-container {
-    background-color: white;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-}
-
-.main-content {
-    flex: 4;
-    background-color: lightgreen;
-}
-
-.side-bar-content {
-    flex: 1;
-    background-color: lightpink;
-}
-
-footer{
-    background-color: lightslategray;
-
-}
-
-.footer-container {
-    display:flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
-.footer-box {
-    flex-basis: 30%;
-    background-color: lightsalmon;
-    padding: 0 10px;
-    box-sizing: border-box;
+#logo {
+    align-content: flex-start;
+    flex:1;
+    background-color: #e3e3e3;
 }
 
+.nav {
+    align-content: flex-end;
+    flex:4;
+    text-align: right;
+    background-color: #d3d3d3;
+}
+
+.main-content-container {
+    background-color: #fff;
+    /* flex: 1 0 auto; 
+    is shorthand for the same as below*/
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+
+.inner-main-content-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.article-content-container {
+    background-color: #f6f6f6;
+    flex: 4;
+}
+
+.aside-container {
+    background-color: #e3e3e3;
+    flex: 1;
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: #f3f3f3;
+}
+
+.footer-content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-widget {
+    flex-basis: 30%;
+    background-color: #d3d3d3;
+
+}
+
+@media (max-width: 900px) {
+    .nav-container,
+    .inner-main-content-container,
+    .footer-content-container {   
+      flex-direction: column;
+    }
+  }
